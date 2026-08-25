@@ -1613,9 +1613,10 @@ body {
 
 
 /* ============================================================
-   SKYX HERO CTA — BUTTONS AT BOTTOM OF HERO IMAGE
-   Added as final override so it takes priority over earlier
-   .hero and .hero-ctas rules.
+   SKYX HERO CTA — FINAL BUTTON POSITION
+   Desktop: keep buttons near the lower-left/center area.
+   Mobile: move both buttons to the lower-left area of the
+   hero image, matching the highlighted position.
    ============================================================ */
 
 .hero {
@@ -1656,24 +1657,40 @@ body {
   justify-content: center;
 }
 
-/* Mobile */
+/* ============================================================
+   MOBILE — BUTTONS IN THE GREEN-HIGHLIGHTED AREA
+   ============================================================ */
 @media (max-width: 768px) {
+
   .hero-content {
     height: 100%;
     min-height: 100%;
   }
 
   .hero-ctas {
-    bottom: 25px;
-    width: calc(100% - 32px);
+    /*
+      Move the buttons to the lower-left of the hero image.
+      Do NOT center them or make them full width.
+    */
+    left: 20px;
+    bottom: 15px;
+    transform: none;
+
+    width: max-content;
+    max-width: calc(100% - 40px);
+
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 12px;
   }
 
   .hero-ctas .btn-primary,
   .hero-ctas .btn-ghost {
-    width: 100%;
-    text-align: center;
+    width: auto;
+    max-width: 100%;
+    min-height: 52px;
+    text-align: left;
+    white-space: nowrap;
   }
 }
