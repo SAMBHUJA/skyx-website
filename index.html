@@ -22,7 +22,7 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-       <!-- <li><a href="#about">About</a></li>-->
+       <li><a href="#get-solar">Our Offerings</a></li>
         <li><a href="#solutions">Solutions</a></li>
         <li><a href="#why">Why SKYX</a></li>
         <li><a href="#how">How It Works</a></li>
@@ -398,49 +398,279 @@
   -->
 
   <!-- SAVINGS CALCULATOR -->
-  <section class="calculator section-dark" id="calculator">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-eyebrow light">Savings Calculator</span>
-        <h2>How Much Could You Save?</h2>
-        <p class="section-sub light-sub">Enter your details and get an instant savings estimate.</p>
-      </div>
-      <div class="calc-wrapper">
-        <div class="calc-form">
-          <div class="calc-row">
-            <div class="calc-field">
-              <label>Monthly Electricity Bill (₹)</label>
-              <input type="number" id="monthlyBill" placeholder="e.g. 50000" min="0" />
-            </div>
-            <div class="calc-field">
-              <label>Connected Load (kW)</label>
-              <input type="number" id="connectedLoad" placeholder="e.g. 30" min="0" />
-            </div>
-          </div>
-          <div class="calc-row">
-            <div class="calc-field">
-              <label>Location</label>
-              <select id="location">
-                <option value="">Select State</option>
-                <option value="high">High Solar Zone (Rajasthan, Gujarat, MP, Maharashtra)</option>
-                <option value="medium">Medium Solar Zone (Karnataka, AP, TN, Telangana)</option>
-                <option value="standard">Standard Zone (Delhi, UP, Punjab, Haryana, WB)</option>
-              </select>
-            </div>
-            <div class="calc-field calc-btn-field">
-              <button class="btn-primary calc-btn" id="calcBtn">Calculate Savings</button>
-            </div>
-          </div>
-        </div>
-        <div class="calc-results" id="calcResults">
-          <div class="calc-placeholder">
-            <div class="calc-sun">☀️</div>
-            <p>Enter your details to see your estimated solar savings</p>
-          </div>
-        </div>
-      </div>
+<section class="calculator section-dark" id="calculator">
+  <div class="container">
+
+    <div class="section-header center">
+      <span class="section-eyebrow light">Solar Savings Calculator</span>
+
+      <h2>How Much Could You Save?</h2>
+
+      <p class="section-sub light-sub">
+        Enter your electricity and roof details to get a preliminary
+        solar recommendation and savings estimate.
+      </p>
     </div>
-  </section>
+
+    <div class="calc-wrapper">
+
+      <!-- CALCULATOR FORM -->
+      <div class="calc-form">
+
+        <!-- ROW 1 -->
+        <div class="calc-row">
+
+          <div class="calc-field">
+            <label for="monthlyBill">
+              Average Monthly Electricity Bill (₹)
+            </label>
+
+            <input
+              type="number"
+              id="monthlyBill"
+              placeholder="e.g. 50000"
+              min="0"
+              step="100"
+            />
+
+            <small>
+              Enter your average monthly electricity bill.
+            </small>
+          </div>
+
+
+          <div class="calc-field">
+
+            <label for="monthlyUnits">
+              Average Monthly Units Consumed (kWh)
+              <span class="optional-label">Optional</span>
+            </label>
+
+            <input
+              type="number"
+              id="monthlyUnits"
+              placeholder="e.g. 5000"
+              min="0"
+              step="100"
+            />
+
+            <small>
+              If entered, this improves the estimate.
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- ROW 2 -->
+        <div class="calc-row">
+
+          <div class="calc-field">
+
+            <label for="state">
+              State
+            </label>
+
+            <select id="state">
+
+              <option value="">
+                Select State
+              </option>
+
+              <option value="telangana">
+                Telangana
+              </option>
+
+              <option value="andhra-pradesh">
+                Andhra Pradesh
+              </option>
+
+              <option value="maharashtra">
+                Maharashtra
+              </option>
+
+              <option value="gujarat">
+                Gujarat
+              </option>
+
+              <option value="rajasthan">
+                Rajasthan
+              </option>
+
+              <option value="karnataka">
+                Karnataka
+              </option>
+
+              <option value="tamil-nadu">
+                Tamil Nadu
+              </option>
+
+              <option value="madhya-pradesh">
+                Madhya Pradesh
+              </option>
+
+              <option value="delhi">
+                Delhi
+              </option>
+
+              <option value="uttar-pradesh">
+                Uttar Pradesh
+              </option>
+
+              <option value="punjab">
+                Punjab
+              </option>
+
+              <option value="haryana">
+                Haryana
+              </option>
+
+              <option value="west-bengal">
+                West Bengal
+              </option>
+
+              <option value="other">
+                Other State
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="calc-field">
+
+            <label for="connectionType">
+              Electricity Connection
+            </label>
+
+            <select id="connectionType">
+
+              <option value="">
+                Select Connection
+              </option>
+
+              <option value="LT">
+                LT — Low Tension
+              </option>
+
+              <option value="HT">
+                HT — High Tension
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- ROW 3 -->
+        <div class="calc-row">
+
+          <div class="calc-field">
+
+            <label for="roofType">
+              Roof Type
+            </label>
+
+            <select id="roofType">
+
+              <option value="">
+                Select Roof Type
+              </option>
+
+              <option value="RCC">
+                RCC Roof
+              </option>
+
+              <option value="Metal">
+                Metal Roof
+              </option>
+
+              <option value="Ground">
+                Ground Mount
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="calc-field">
+
+            <label for="roofArea">
+              Available Roof Area (sq. ft.)
+              <span class="optional-label">Optional</span>
+            </label>
+
+            <input
+              type="number"
+              id="roofArea"
+              placeholder="e.g. 5000"
+              min="0"
+              step="100"
+            />
+
+            <small>
+              Leave blank if you don't know the area.
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <!-- CALCULATE BUTTON -->
+        <div class="calc-action">
+
+          <button
+            type="button"
+            class="btn-primary calc-btn"
+            id="calcBtn"
+          >
+            Calculate My Solar Savings →
+          </button>
+
+        </div>
+
+
+        <!-- ASSUMPTION NOTE -->
+        <div class="calc-disclaimer">
+          <strong>Important:</strong>
+          This calculator provides a preliminary estimate only.
+          Actual solar capacity, generation, tariff savings,
+          payback and project economics depend on your electricity
+          tariff, site conditions, shading, roof orientation,
+          DISCOM regulations, system design and financing model.
+        </div>
+
+      </div>
+
+
+      <!-- RESULTS -->
+      <div class="calc-results" id="calcResults">
+
+        <div class="calc-placeholder">
+
+          <div class="calc-sun">☀️</div>
+
+          <h3>Your Solar Recommendation</h3>
+
+          <p>
+            Enter your electricity and roof details to see your
+            estimated solar potential and savings.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
   <!-- VISION -->
   <section class="vision section-light" id="vision">
@@ -476,43 +706,221 @@
           </div>
         </div>
         <div class="contact-form-wrap">
-          <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-            <div class="form-row">
-              <div class="form-field">
-                <label>Full Name *</label>
-                <input type="text" name="name" placeholder="Your name" required />
-              </div>
-              <div class="form-field">
-                <label>Company / Organization</label>
-                <input type="text" name="company" placeholder="Your company" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label>Mobile Number *</label>
-                <input type="tel" name="mobile" placeholder="+91 XXXXX XXXXX" required />
-              </div>
-              <div class="form-field">
-                <label>Email Address *</label>
-                <input type="email" name="email" placeholder="you@company.com" required />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label>City</label>
-                <input type="text" name="city" placeholder="Your city" />
-              </div>
-              <div class="form-field">
-                <label>Monthly Electricity Bill</label>
-                <input type="text" name="bill" placeholder="e.g. ₹50,000/month" />
-              </div>
-            </div>
-            <div class="form-field full">
-              <label>Message</label>
-              <textarea name="message" rows="3" placeholder="Tell us about your energy needs or any questions..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary form-submit">Get My Savings Report →</button>
-          </form>
+          <form
+  class="contact-form"
+  id="contactForm"
+  novalidate
+>
+
+  <!-- FormSubmit configuration -->
+  <input
+    type="hidden"
+    name="_subject"
+    value="New SKYX Energy Website Enquiry"
+  />
+
+  <input
+    type="hidden"
+    name="_template"
+    value="table"
+  />
+
+  <!-- Helps identify the website/page generating the enquiry -->
+  <input
+    type="hidden"
+    name="_url"
+    value="https://skyx-energy.vercel.app/#contact"
+  />
+
+  <!-- Honeypot anti-spam field -->
+  <input
+    type="text"
+    name="_honey"
+    tabindex="-1"
+    autocomplete="off"
+    style="display:none"
+  />
+
+  <div class="form-row">
+
+    <div class="form-field">
+      <label for="contactName">
+        Full Name *
+      </label>
+
+      <input
+        type="text"
+        id="contactName"
+        name="name"
+        placeholder="Your name"
+        autocomplete="name"
+        required
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="contactCompany">
+        Company / Organization
+      </label>
+
+      <input
+        type="text"
+        id="contactCompany"
+        name="company"
+        placeholder="Your company"
+        autocomplete="organization"
+      />
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="form-field">
+      <label for="contactMobile">
+        Mobile Number *
+      </label>
+
+      <input
+        type="tel"
+        id="contactMobile"
+        name="mobile"
+        placeholder="+91 XXXXX XXXXX"
+        autocomplete="tel"
+        required
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="contactEmail">
+        Email Address *
+      </label>
+
+      <input
+        type="email"
+        id="contactEmail"
+        name="email"
+        placeholder="you@company.com"
+        autocomplete="email"
+        required
+      />
+    </div>
+
+  </div>
+
+
+  <!-- OUR OFFERING -->
+  <div class="form-row">
+
+    <div class="form-field">
+
+      <label for="contactOffering">
+        Our Offering *
+      </label>
+
+      <select
+        id="contactOffering"
+        name="offering"
+        required
+      >
+        <option value="" selected disabled>
+          Choose an offering
+        </option>
+
+        <option value="Home">
+          Home
+        </option>
+
+        <option value="Housing Societies">
+          Housing Societies
+        </option>
+
+        <option value="Commercial">
+          Commercial
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="form-field">
+
+      <label for="contactCity">
+        City
+      </label>
+
+      <input
+        type="text"
+        id="contactCity"
+        name="city"
+        placeholder="Your city"
+        autocomplete="address-level2"
+      />
+
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="form-field">
+
+      <label for="contactBill">
+        Monthly Electricity Bill
+      </label>
+
+      <input
+        type="text"
+        id="contactBill"
+        name="bill"
+        placeholder="e.g. ₹50,000/month"
+      />
+
+    </div>
+
+    <div class="form-field">
+      <!-- Reserved for future field -->
+    </div>
+
+  </div>
+
+
+  <div class="form-field full">
+
+    <label for="contactMessage">
+      Message
+    </label>
+
+    <textarea
+      id="contactMessage"
+      name="message"
+      rows="3"
+      placeholder="Tell us about your energy needs or any questions..."
+    ></textarea>
+
+  </div>
+
+
+  <!-- AJAX ERROR -->
+  <div
+    class="form-error"
+    id="formError"
+    role="alert"
+    style="display:none"
+  ></div>
+
+
+  <button
+    type="submit"
+    class="btn-primary form-submit"
+  >
+    Get My Savings Report →
+  </button>
+
+</form>
           <div class="form-success" id="formSuccess" style="display:none">
             <div class="success-icon">✅</div>
             <h4>We've received your request!</h4>
@@ -544,9 +952,8 @@
         <div class="footer-links">
           <h5>Company</h5>
           <ul>
-            <li><a href="#about">About SKYX</a></li>
+            <li><a href="#get-solar">Our Offerings</a></li>
             <li><a href="#industries">Industries</a></li>
-            <li><a href="#impact">Sustainability</a></li>
             <li><a href="#vision">Our Vision</a></li>
           </ul>
         </div>
@@ -555,15 +962,40 @@
           <ul>
             <li><a href="#contact">Free Assessment</a></li>
             <li><a href="#calculator">Savings Calculator</a></li>
-            <li><a href="mailto:info@skyxenergy.com">info@skyxenergy.com</a></li>
+            <li><a href="mailto:kapilreddyt@gmail.com">kapilreddyt@gmail.com</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 SKYX Energy. All rights reserved. Built in India. Designed for the world.</p>
+        <p>© 2026 SKYX Energy. All rights reserved. Built in India. Designed for the world.</p>
       </div>
     </div>
   </footer>
+  <!-- WHATSAPP FLOATING BUTTON -->
+<a
+  href="https://wa.me/919820719569?text=Hello%20SKYX%20Energy,%20I%20am%20interested%20in%20your%20solar%20solutions."
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with SKYX Energy on WhatsApp"
+  title="Chat with SKYX Energy"
+>
+  <span class="whatsapp-icon" aria-hidden="true">
+  <svg
+    viewBox="0 0 32 32"
+    width="30"
+    height="30"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="#fff"
+      d="M16 3C8.82 3 3 8.82 3 16c0 2.29.6 4.44 1.65 6.31L3 29l6.87-1.6A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3Zm0 23.64c-2.05 0-4.05-.55-5.8-1.6l-.42-.25-4.08.95.98-3.97-.27-.43A10.96 10.96 0 1 1 16 26.64Zm6-8.22c-.33-.17-1.95-.96-2.25-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.17-1.4-.52-2.67-1.65-.99-.88-1.65-1.96-1.84-2.29-.19-.33-.02-.51.14-.68.15-.15.33-.38.49-.57.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.02-2.44-.27-.65-.55-.56-.74-.57h-.63c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.7 0 1.59 1.17 3.12 1.33 3.34.16.22 2.3 3.52 5.57 4.94.78.34 1.39.54 1.87.69.79.25 1.51.21 2.08.13.63-.09 1.95-.8 2.22-1.57.27-.77.27-1.43.19-1.57-.08-.14-.3-.22-.63-.38Z"
+    />
+  </svg>
+</span>
+</a>
+
 
   <script src="js/main.js"></script>
 </body>
