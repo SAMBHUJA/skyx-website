@@ -1717,16 +1717,40 @@ body {
   }
 }
 /* ============================================================
-   SKYX HERO — MOBILE FULL IMAGE FIX
+   SKYX HERO — MOBILE FULL IMAGE
    ============================================================ */
 
 @media (max-width: 768px) {
 
   .hero {
+    margin-top: 64px;
+
+    /* Let the vertical image determine the height */
+    min-height: 0 !important;
+    height: auto !important;
+
+    padding: 0 !important;
+
+    /* Mobile vertical image */
     background-image: url("../images/hero-bg-mobile.png") !important;
-    background-size: cover !important;
-    background-position: center center !important;
+
+    /* SHOW THE COMPLETE IMAGE */
+    background-size: 100% auto !important;
+    background-position: top center !important;
     background-repeat: no-repeat !important;
+
+    /*
+      The image itself determines the visible area.
+      Do not use cover here because it crops the image.
+    */
+    aspect-ratio: 832 / 1792;
+  }
+
+  .hero-content {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
   }
 
 }
