@@ -1717,13 +1717,14 @@ body {
   }
 }
 /* ============================================================
-   SKYX HERO — MOBILE IMAGE FIX
+   SKYX HERO — MOBILE IMAGE
    ============================================================ */
 
 @media (max-width: 768px) {
 
   .hero {
-    background-size: 100% 100% !important;
+    background-image: url("../images/hero-bg-mobile.png") !important;
+    background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
   }
