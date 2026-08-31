@@ -1686,7 +1686,7 @@ body {
 
     /* Lower-left of the actual HERO */
     left: 20px !important;
-    bottom: 120px !important;
+    bottom: 130px !important;
 
     /* Remove desktop centering */
     transform: none !important;
