@@ -1724,15 +1724,9 @@ body {
 
   .hero {
     background-image: url("../images/hero-bg-mobile.png") !important;
-
-    /* Show the complete mobile image */
-    background-size: 100% auto !important;
-    background-position: top center !important;
+    background-size: cover !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
-
-    /* Let the image/content determine the hero height */
-    min-height: 0 !important;
-    height: auto !important;
   }
 
 }
