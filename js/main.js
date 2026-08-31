@@ -862,25 +862,33 @@ async function handleSubmit(e) {
 
     const result = await response.json();
 
-    if (!response.ok || result.success !== true) {
-      throw new Error(
-        result.message || 'Unable to submit the form.'
-      );
-    }
+	console.log('SKYX FormSubmit response:', result);
 
-    form.style.display = 'none';
+	if (
+	  !response.ok ||
+	  String(result.success).toLowerCase() !== 'true'
+	) {
+	  throw new Error(
+		result.message || 'Unable to submit the form.'
+	  );
+	}
 
-    if (success) {
-      success.style.display = 'block';
+	/* --------------------------------
+	   SUCCESS
+	   -------------------------------- */
 
-      setTimeout(() => {
-        success.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
-      }, 100);
-    }
+	form.style.display = 'none';
 
+	if (success) {
+	  success.style.display = 'block';
+
+	  setTimeout(() => {
+		success.scrollIntoView({
+		  behavior: 'smooth',
+		  block: 'center'
+		});
+	  }, 100);
+	}
   } catch (error) {
     console.error('SKYX contact form error:', error);
 

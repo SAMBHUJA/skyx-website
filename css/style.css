@@ -1716,3 +1716,16 @@ body {
     white-space: nowrap;
   }
 }
+/* ============================================================
+   SKYX HERO — MOBILE IMAGE FIX
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  .hero {
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+}
