@@ -1717,29 +1717,22 @@ body {
   }
 }
 /* ============================================================
-   SKYX — MOBILE HERO IMAGE FIX
+   SKYX HERO — MOBILE FULL IMAGE FIX
    ============================================================ */
 
 @media (max-width: 768px) {
 
   .hero {
     background-image: url("../images/hero-bg-mobile.png") !important;
+
+    /* Show the complete mobile image */
     background-size: 100% auto !important;
     background-position: top center !important;
     background-repeat: no-repeat !important;
 
-    height: auto !important;
+    /* Let the image/content determine the hero height */
     min-height: 0 !important;
-
-    padding: 0 !important;
-    margin-top: 64px;
-  }
-
-  .hero-content {
-    position: relative !important;
-    width: 100% !important;
     height: auto !important;
-    min-height: 0 !important;
   }
 
 }
