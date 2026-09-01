@@ -1091,7 +1091,7 @@ body {
   padding: 130px 24px 80px;
 
   /* FULL IMAGE — NO WHITE GRADIENT */
-  background-image: url("../images/hero-bg.jpeg");
+  background-image: url("../images/hero-bg.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1340,7 +1340,7 @@ body {
         rgba(255,253,249,.96) 0%,
         rgba(255,250,240,.86) 42%,
         rgba(255,255,255,.12) 78%),
-      url("../images/hero-bg.jpeg");
+      url("../images/hero-bg.png");
     background-position: 62% center;
   }
   .hero-content { text-align: center; }
@@ -1373,7 +1373,7 @@ body {
 
   padding: 80px 24px;
 
-  background-image: url("../images/hero-bg.jpeg");
+  background-image: url("../images/hero-bg.png");
 
   /*
      IMPORTANT:
